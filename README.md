@@ -28,6 +28,8 @@ npm install --prefix=~/.global-node-modules @ahrefs/mcp@latest -g
 ```
 
 ## Configuration
+
+### NPX
 You can now add the Ahrefs MCP to your favourite AI assistant app by adding the `ahrefs` part to your app's configuration file:
 ```json
 {
@@ -43,6 +45,23 @@ You can now add the Ahrefs MCP to your favourite AI assistant app by adding the 
             }
         }
     }
+}
+```
+
+### Docker
+
+```json
+{
+  "id": "ahrefs-docker",
+  "command": "docker",
+  "args": [
+    "run","--rm","-i",
+    "-e","API_KEY=${API_KEY}",
+    "ahrefs-mcp-server"
+  ],
+  "env": {
+    "API_KEY": "<your-api-key>"
+  }
 }
 ```
 
