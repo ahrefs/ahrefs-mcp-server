@@ -1,3 +1,8 @@
+> [!NOTE]
+> This repository is for the **local Ahrefs MCP server**. We've also released a **remote Ahrefs MCP server**, which doesn't require local setup and works directly in popular AI tools.  
+>  
+> Learn more here: [Remote MCP server documentation](https://docs.ahrefs.com/docs/mcp/reference/introduction)
+
 # Ahrefs MCP
 A Model Context Protocol server to connect Claude desktop and other compatible AI assistants to Ahrefs.
 
