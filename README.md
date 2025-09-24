@@ -1,5 +1,5 @@
 > [!NOTE]
-> This repository is for the **local Ahrefs MCP server**. We've also released a **remote Ahrefs MCP server**, which doesn't require local setup and works directly in popular AI tools.  
+> This repository is for the **local Ahrefs MCP server** which works with API v3 keys only. It DO NOT work with MCP keys. We've also released a **remote Ahrefs MCP server**, which doesn't require local setup and works directly in popular AI tools.  
 >  
 > Learn more here: [Remote MCP server documentation](https://docs.ahrefs.com/docs/mcp/reference/introduction)
 
