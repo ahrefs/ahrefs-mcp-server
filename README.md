@@ -6,6 +6,10 @@
 # Ahrefs MCP
 A Model Context Protocol server to connect Claude desktop and other compatible AI assistants to Ahrefs.
 
+<a href="https://glama.ai/mcp/servers/@ahrefs/ahrefs-mcp-server">
+  <img width="380" height="200" src="https://glama.ai/mcp/servers/@ahrefs/ahrefs-mcp-server/badge" alt="Ahrefs Server MCP server" />
+</a>
+
 ## Installation
 `npm` commands need to be executed in a terminal:
 - macOS: open the Terminal from your Applications folder
