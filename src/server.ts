@@ -25,11 +25,6 @@ const tools: Tool[] = [
             },
             {
                 "in": "query",
-                "name": "offset",
-                "required": false
-            },
-            {
-                "in": "query",
                 "name": "limit",
                 "required": false
             },
@@ -192,11 +187,6 @@ const tools: Tool[] = [
             {
                 "in": "query",
                 "name": "timeout",
-                "required": false
-            },
-            {
-                "in": "query",
-                "name": "offset",
                 "required": false
             },
             {
@@ -498,11 +488,6 @@ const tools: Tool[] = [
             {
                 "in": "query",
                 "name": "timeout",
-                "required": false
-            },
-            {
-                "in": "query",
-                "name": "offset",
                 "required": false
             },
             {
@@ -827,11 +812,6 @@ const tools: Tool[] = [
             },
             {
                 "in": "query",
-                "name": "offset",
-                "required": false
-            },
-            {
-                "in": "query",
                 "name": "limit",
                 "required": false
             },
@@ -997,11 +977,6 @@ const tools: Tool[] = [
             },
             {
                 "in": "query",
-                "name": "offset",
-                "required": false
-            },
-            {
-                "in": "query",
                 "name": "limit",
                 "required": false
             },
@@ -1159,11 +1134,6 @@ const tools: Tool[] = [
             {
                 "in": "query",
                 "name": "timeout",
-                "required": false
-            },
-            {
-                "in": "query",
-                "name": "offset",
                 "required": false
             },
             {
@@ -2962,11 +2932,6 @@ const tools: Tool[] = [
             },
             {
                 "in": "query",
-                "name": "offset",
-                "required": false
-            },
-            {
-                "in": "query",
                 "name": "limit",
                 "required": false
             },
@@ -3135,11 +3100,6 @@ const tools: Tool[] = [
             },
             {
                 "in": "query",
-                "name": "offset",
-                "required": false
-            },
-            {
-                "in": "query",
                 "name": "limit",
                 "required": false
             },
@@ -3296,11 +3256,6 @@ const tools: Tool[] = [
             },
             {
                 "in": "query",
-                "name": "offset",
-                "required": false
-            },
-            {
-                "in": "query",
                 "name": "limit",
                 "required": false
             },
@@ -3448,11 +3403,6 @@ const tools: Tool[] = [
             {
                 "in": "query",
                 "name": "timeout",
-                "required": false
-            },
-            {
-                "in": "query",
-                "name": "offset",
                 "required": false
             },
             {
@@ -3608,11 +3558,6 @@ const tools: Tool[] = [
             },
             {
                 "in": "query",
-                "name": "offset",
-                "required": false
-            },
-            {
-                "in": "query",
                 "name": "limit",
                 "required": false
             },
@@ -3748,11 +3693,6 @@ const tools: Tool[] = [
             {
                 "in": "query",
                 "name": "timeout",
-                "required": false
-            },
-            {
-                "in": "query",
-                "name": "offset",
                 "required": false
             },
             {
@@ -3896,11 +3836,6 @@ const tools: Tool[] = [
             },
             {
                 "in": "query",
-                "name": "offset",
-                "required": false
-            },
-            {
-                "in": "query",
                 "name": "limit",
                 "required": false
             },
@@ -4036,11 +3971,6 @@ const tools: Tool[] = [
             {
                 "in": "query",
                 "name": "timeout",
-                "required": false
-            },
-            {
-                "in": "query",
-                "name": "offset",
                 "required": false
             },
             {
@@ -4236,11 +4166,6 @@ const tools: Tool[] = [
             {
                 "in": "query",
                 "name": "timeout",
-                "required": false
-            },
-            {
-                "in": "query",
-                "name": "offset",
                 "required": false
             },
             {
@@ -4442,11 +4367,6 @@ const tools: Tool[] = [
             },
             {
                 "in": "query",
-                "name": "offset",
-                "required": false
-            },
-            {
-                "in": "query",
                 "name": "limit",
                 "required": false
             },
@@ -4638,11 +4558,6 @@ const tools: Tool[] = [
             {
                 "in": "query",
                 "name": "timeout",
-                "required": false
-            },
-            {
-                "in": "query",
-                "name": "offset",
                 "required": false
             },
             {
@@ -4842,11 +4757,6 @@ const tools: Tool[] = [
             },
             {
                 "in": "query",
-                "name": "offset",
-                "required": false
-            },
-            {
-                "in": "query",
                 "name": "limit",
                 "required": false
             },
@@ -4994,11 +4904,6 @@ const tools: Tool[] = [
             {
                 "in": "query",
                 "name": "timeout",
-                "required": false
-            },
-            {
-                "in": "query",
-                "name": "offset",
                 "required": false
             },
             {
