@@ -358,6 +358,184 @@ const tools: Tool[] = [
         "name": "rank-tracker-competitors-overview"
     },
     {
+        "_original_method": "GET",
+        "_original_parameters": [
+            {
+                "in": "query",
+                "name": "timeout",
+                "required": false
+            },
+            {
+                "in": "query",
+                "name": "limit",
+                "required": false
+            },
+            {
+                "in": "query",
+                "name": "order_by",
+                "required": false
+            },
+            {
+                "in": "query",
+                "name": "where",
+                "required": false
+            },
+            {
+                "in": "query",
+                "name": "select",
+                "required": true
+            },
+            {
+                "in": "query",
+                "name": "date_compared",
+                "required": false
+            },
+            {
+                "in": "query",
+                "name": "date",
+                "required": true
+            },
+            {
+                "in": "query",
+                "name": "device",
+                "required": true
+            },
+            {
+                "in": "query",
+                "name": "project_id",
+                "required": true
+            },
+            {
+                "in": "query",
+                "name": "target_and_tracked_competitors_only",
+                "required": false
+            },
+            {
+                "in": "query",
+                "name": "volume_mode",
+                "required": false
+            },
+            {
+                "in": "query",
+                "name": "output",
+                "required": false
+            }
+        ],
+        "_original_path": "rank-tracker/competitors-pages",
+        "_original_request_body": null,
+        "description": "Provides an overview of competitor pages and keyword metrics for a specified project and date in Ahrefs Rank Tracker, allowing comparison between current and previous data. Use doc tool first to get the real input schema.",
+        "inputSchema": {
+            "properties": {
+                "timeout": {
+                    "type": "integer"
+                },
+                "limit": {
+                    "type": "integer"
+                },
+                "order_by": {
+                    "type": "string"
+                },
+                "where": {
+                    "type": "string"
+                },
+                "select": {
+                    "type": "string"
+                },
+                "date_compared": {
+                    "type": "string"
+                },
+                "date": {
+                    "type": "string"
+                },
+                "device": {
+                    "type": "string"
+                },
+                "project_id": {
+                    "type": "integer"
+                },
+                "target_and_tracked_competitors_only": {
+                    "type": "boolean"
+                },
+                "volume_mode": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "select",
+                "date",
+                "device",
+                "project_id"
+            ],
+            "type": "object"
+        },
+        "_inputSchema": {
+            "properties": {
+                "timeout": {
+                    "description": "A manual timeout duration in seconds.",
+                    "type": "integer"
+                },
+                "limit": {
+                    "description": "The number of results to return.",
+                    "type": "integer"
+                },
+                "order_by": {
+                    "description": "A column to order results by. Example: field_a:desc,field_b:asc\n\nResponse schema:\n\n**keywords**: The total number of keywords that your target ranks for in the top 100 organic search results.  \ntype: integer  \n\n**share_of_traffic_value**: The share of your target's organic search traffic value compared to the total organic search traffic value for all tracked keywords.  \ntype: float  \n\n**share_of_traffic_value_prev**: The share of traffic value on the comparison date.  \ntype: float  \n\n**share_of_voice**: The share of your target's organic search traffic compared to the total organic search traffic for all tracked keywords.  \ntype: float  \n\n**share_of_voice_prev**: The share of voice on the comparison date.  \ntype: float  \n\n**status**: The status of a page: the new page that just started to rank (\"left\"), the lost page that disappeared from search results (\"right\"), or no change (\"both\").  \ntype: string  \nenum: `\"left\"` `\"right\"` `\"both\"`  \n\n**title**: The title displayed for the page in its top keyword's SERP.  \ntype: string nullable  \n\n**title_prev**: The title on the comparison date.  \ntype: string nullable  \n\n**traffic**: An estimation of the number of monthly visits that a page gets from organic search.  \ntype: integer  \n\n**traffic_prev**: The traffic on the comparison date.  \ntype: integer  \n\n**traffic_value**: The estimated value of a page's monthly organic search traffic, in USD cents.  \ntype: integer nullable  \n\n**traffic_value_prev**: The traffic value on the comparison date.  \ntype: integer nullable  \n\n**url**: The page URL.  \ntype: string  \n\n",
+                    "type": "string"
+                },
+                "where": {
+                    "description": "The filter expression. Example: {\"or\":[{\"field\":\"foo\",\"modifier\":\"uppercase\",\"is\":[\"eq\",\"AHREFS\"]},{\"field\":\"bar\",\"list_is\":{\"and\":[[\"prefix\",\"Ahrefs\"],[\"suffix\",\"seo\"]]}}]}.\nThe syntax is described by the following grammar, expressed in BNF-style notation.\nA term enclosed in angle brackets < and > denotes a symbol. A symbol followed by a + denotes a non-empty array containing the symbol. A ? preceding an object field indicates that the field is optional.\nThe two terminal symbols are defined as follows:\n<field_alias> A filter field alias.\n<value> A JSON value. It should match the type of the field (or of the field's modifier, if one is present).\nPermitted patterns in regex: RE2 syntax..\n<bool_filter> ::= { \"and\" : <bool_filter>+ }\n              |   { \"or\" : <bool_filter>+ }\n              |   { \"not\" : <bool_filter> }\n              |   <expr>\n\n<expr> ::= {\n             \"field\" : <field_alias>,\n             ? \"is\": <condition>,\n             ? \"list_is\": <list_condition>\n           }\n\n<condition> ::= [ \"eq\", <value> ]\n            |   [ \"neq\", <value> ]\n            |   [ \"gt\", <value> ]\n            |   [ \"gte\", <value> ]\n            |   [ \"lt\", <value> ]\n            |   [ \"lte\", <value> ]\n            |   [ \"substring\", <value> ]\n            |   [ \"isubstring\", <value> ]\n            |   [ \"phrase_match\", <value> ]\n            |   [ \"iphrase_match\", <value> ]\n            |   [ \"prefix\", <value> ]\n            |   [ \"suffix\", <value> ]\n            |   [ \"regex\", <value> ]\n            |   \"empty\"\n            |   \"is_null\"\n\n<condition_bool_filter> ::= { \"and\" : <condition_bool_filter>+ }\n                        |   { \"or\" : <condition_bool_filter>+ }\n                        |   { \"not\" : <condition_bool_filter> }\n                        |   <condition>\n\n<list_condition> ::= { \"any\" : <condition_bool_filter> }\n                 |   { \"all\" : <condition_bool_filter> }\n The following column identifiers are recognized (this differs from the identifiers recognized by the `select` parameter).\n\n**country**: The country that a given keyword is being tracked in. A two-letter country code (ISO 3166-1 alpha-2).  \ntype: string  \nenum: `\"AD\"` .. `\"ZW\"`\n\n**country_prev**: The country that a given keyword is being tracked in on the comparison date. A two-letter country code (ISO 3166-1 alpha-2).  \ntype: string  \nenum: `\"AD\"` .. `\"ZW\"`\n\n**domain**: The page domain.  \ntype: string\n\n**language**: The SERP language that a given keyword is being tracked for.  \ntype: string\n\n**language_prev**: The SERP language on the comparison date.  \ntype: string\n\n**location**: The location (country, state/province, or city) that a given keyword is being tracked in.  \ntype: string\n\n**location_prev**: The location (country, state/province, or city) that a given keyword is being tracked in on the comparison date.  \ntype: string\n\n**tags**: A list of tags assigned to a given keyword.  \ntype: array(string)\n\n**tags_prev**: A list of tags assigned to a given keyword on the comparison date.  \ntype: array(string)\n\n**url**: The page URL.  \ntype: string",
+                    "type": "string"
+                },
+                "select": {
+                    "description": "A mandatory comma-separated list of columns to return. Example: field_a,field_b,field_c See response schema for valid column identifiers.",
+                    "type": "string"
+                },
+                "date_compared": {
+                    "description": "A date to compare metrics with in YYYY-MM-DD format.",
+                    "type": "string",
+                    "format": "date"
+                },
+                "date": {
+                    "description": "A date to report metrics on in YYYY-MM-DD format.",
+                    "type": "string",
+                    "format": "date"
+                },
+                "device": {
+                    "description": "Choose between mobile and desktop rankings.",
+                    "type": "string",
+                    "enum": [
+                        "desktop",
+                        "mobile"
+                    ]
+                },
+                "project_id": {
+                    "description": "The unique identifier of the project. You can find it in the URL of your Rank Tracker project in Ahrefs: `https://app.ahrefs.com/rank-tracker/overview/#project_id#`",
+                    "type": "integer"
+                },
+                "target_and_tracked_competitors_only": {
+                    "description": "If true, restrict pages to target and tracked competitors.",
+                    "type": "boolean"
+                },
+                "volume_mode": {
+                    "description": "The search volume calculation mode: monthly or average. It affects volume, traffic, and traffic value.",
+                    "type": "string",
+                    "enum": [
+                        "monthly",
+                        "average"
+                    ]
+                }
+            },
+            "required": [
+                "select",
+                "date",
+                "device",
+                "project_id"
+            ],
+            "type": "object"
+        },
+        "name": "rank-tracker-competitors-pages"
+    },
+    {
         "_original_method": "POST",
         "_original_parameters": [
             {
